@@ -53,7 +53,7 @@ const OurTrainingPrograms = () => {
     },
   ];
   return (
-    <div className="py-20 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] bg-[#F8FBFB]">
+    <div  className="py-20 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] bg-[#F8FBFB]">
       <div className="text-center m-auto ">
         <p className="text-[#0055D2] text-xl font-bold">برامجنا التدريبية</p>
         <h1 className="font-bold mt-5 text-2xl">
