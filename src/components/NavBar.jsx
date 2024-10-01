@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+import  { useState } from "react";
+>>>>>>> 448f919685dc21677a28c67cc28c54d5aa2039c7
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
@@ -25,10 +29,14 @@ const NavBar = () => {
           <h2>البرامج الدراسية</h2>
           <div className="h-0.5 bg-white mt-1 hidden"></div>
         </NavLink> */}
+<<<<<<< HEAD
         <NavLink
           to="/study-programs"
           className="flex flex-row-reverse gap-1 items-center"
         >
+=======
+        <NavLink to="/study-programs" className="flex flex-row-reverse gap-1 items-center">
+>>>>>>> 448f919685dc21677a28c67cc28c54d5aa2039c7
           <h2>الدورات التدريبية</h2>
           <img src="src\assets\chevron-down.png" alt="" />
         </NavLink>
@@ -56,6 +64,7 @@ const NavBar = () => {
       </div>
 
       <ul className="hidden md:flex flex-row-reverse items-center text-white gap-5">
+<<<<<<< HEAD
         <Link to="register">
           <button className="items-center">انضم كشريك</button>
         </Link>
@@ -66,6 +75,13 @@ const NavBar = () => {
             تسجيل دخول
           </button>
         </Link>
+=======
+        <Link to='register'><button className="items-center">انضم كشريك</button></Link>
+
+       <Link to='login'> <button className="items-center text-blue-800 bg-white font-semibold border rounded-lg py-2 px-5">
+          تسجيل دخول
+        </button></Link>
+>>>>>>> 448f919685dc21677a28c67cc28c54d5aa2039c7
       </ul>
 
       {/* navigation links for below medium screens*/}

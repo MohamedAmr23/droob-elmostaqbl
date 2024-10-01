@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import "../index.css";
 import officeImg from "../assets/office.png";
@@ -81,3 +82,14 @@ const WhoWeAre = () => {
 };
 
 export default WhoWeAre;
+=======
+import React from 'react'
+
+const WhoWeAre = () => {
+  return (
+    <div>WhoWeAre</div>
+  )
+}
+
+export default WhoWeAre
+>>>>>>> 448f919685dc21677a28c67cc28c54d5aa2039c7
