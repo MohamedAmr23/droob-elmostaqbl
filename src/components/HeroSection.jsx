@@ -1,10 +1,21 @@
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavbarContext } from "../contexts/NavBarContext";
 
 const HeroSection = () => {
   // state to control responsiive navbar
-  const [show, setShow] = useState(false);
-  const nav = useNavigate();
+  const {
+    show,
+    setShow,
+    showDropdown,
+    setShowDropdown,
+    selectedOption,
+    setSelectedOption,
+    handleOptionClick,
+    courses,
+  } = useContext(NavbarContext); // Accessing the context
+  const nav = useNavigate(); // React router navigation
   return (
     <>
       <nav className=" relative z-50 flex flex-row-reverse justify-between items-center text-[#CCCCDD] bg-[#0B236B]  px-6 py-4 md:px-16">
@@ -18,30 +29,96 @@ const HeroSection = () => {
         {/* navigation links for medium and above screens*/}
 
         <ul className="hidden lg:flex flex-row-reverse gap-5">
-          <NavLink to="/" className="items-center">
+          <NavLink
+            onClick={() => {
+              setShowDropdown(false);
+              setSelectedOption("");
+            }}
+            to="/"
+            className="items-center"
+          >
             <h2>الرئيسية</h2>
             <div className="h-0.5 bg-white mt-1 hidden"></div>
           </NavLink>
-          {/* <NavLink to="/" className="items-center">
-          <h2>البرامج الدراسية</h2>
-          <div className="h-0.5 bg-white mt-1 hidden"></div>
-        </NavLink> */}
           <NavLink
-            to="/study-programs"
-            className="flex flex-row-reverse gap-1 items-center"
+            onClick={() => {
+              setShowDropdown(false);
+              setSelectedOption("");
+            }}
+            to="/who-we-are"
+            className="items-center"
           >
-            <h2>الدورات التدريبية</h2>
-            <img src="src\assets\chevron-down.png" alt="" />
-          </NavLink>
-          <NavLink to="/who-we-are" className="items-center">
             <h2>من نحن</h2>
             <div className="h-0.5 bg-white mt-1 hidden"></div>
           </NavLink>
-          <NavLink to="/support-and-communication" className="items-center">
+          <NavLink
+            onClick={() => {
+              setShowDropdown(false);
+              setSelectedOption("");
+            }}
+            to="/study-programs"
+            className="items-center"
+          >
+            <h2>البرامج الدراسية</h2>
+            <div className="h-0.5 bg-white mt-1 hidden"></div>
+          </NavLink>
+          {/* Trigger for the dropdown menu */}
+          <div className="relative">
+            <button
+              onClick={() => setShowDropdown(!showDropdown)}
+              className="flex flex-row-reverse gap-1 items-center focus:outline-none"
+            >
+              <h2>الدورات التدريبية</h2>
+              <img src="src/assets/chevron-down.png" alt="dropdown" />
+            </button>
+
+            {/* Dropdown Menu */}
+            {showDropdown && (
+              <div className="absolute mt-2 bg-[#0B236B] shadow-lg rounded-lg py-4 px-6 right-0 w-64 text-right">
+                <ul className="space-y-2 mt-2 flex flex-col">
+                  {courses.map((item, index) => {
+                    return (
+                      <NavLink
+                        to="/study-courses"
+                        className={`cursor-pointer ${
+                          selectedOption === item
+                            ? "font-bold text-blue-600"
+                            : "text-[#CCCCDD]"
+                        } hover:text-white`}
+                        onClick={() => {
+                          handleOptionClick(item);
+                          setShowDropdown(false);
+                        }}
+                        key={index}
+                      >
+                        {item}
+                      </NavLink>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          <NavLink
+            onClick={() => {
+              setShowDropdown(false);
+              setSelectedOption("");
+            }}
+            to="/support-and-communication"
+            className="items-center"
+          >
             <h2>الدعم و التواصل</h2>
             <div className="h-0.5 bg-white mt-1 hidden"></div>
           </NavLink>
-          <NavLink to="/blog" className="items-center">
+          <NavLink
+            onClick={() => {
+              setShowDropdown(false);
+              setSelectedOption("");
+            }}
+            to="/blog"
+            className="items-center"
+          >
             <h2>المدونة</h2>
             <div className="h-0.5 bg-white mt-1 hidden"></div>
           </NavLink>
@@ -58,12 +135,26 @@ const HeroSection = () => {
 
         <ul className="hidden lg:flex flex-row-reverse items-center text-white gap-5">
           <Link to="register">
-            <button className="items-center">انضم كشريك</button>
+            <button
+              onClick={() => {
+                setShowDropdown(false);
+                setSelectedOption("");
+              }}
+              className="items-center"
+            >
+              انضم كشريك
+            </button>
           </Link>
 
           <Link to="login">
             {" "}
-            <button className="items-center text-blue-800 bg-white font-semibold border rounded-lg py-2 px-5">
+            <button
+              onClick={() => {
+                setShowDropdown(false);
+                setSelectedOption("");
+              }}
+              className="items-center text-blue-800 bg-white font-semibold border rounded-lg py-2 px-5"
+            >
               تسجيل دخول
             </button>
           </Link>
@@ -79,34 +170,86 @@ const HeroSection = () => {
           <ul className="flex flex-col items-center gap-10">
             <NavLink
               to="/"
-              onClick={() => setShow(false)}
+              onClick={() => {
+                setShow(false);
+                setShowDropdown(false);
+                setSelectedOption("");
+              }}
               className="items-center"
             >
               <h2>الرئيسية</h2>
               <div className="h-0.5 bg-white mt-1 hidden"></div>
             </NavLink>
-            {/* <NavLink to="/" className="items-center">
-          <h2>البرامج الدراسية</h2>
-          <div className="h-0.5 bg-white mt-1 hidden"></div>
-        </NavLink> */}
-            <NavLink
-              to="/study-programs"
-              className="flex flex-row-reverse gap-1 items-center"
-            >
-              <h2>الدورات التدريبية</h2>
-              <img src="src\assets\chevron-down.png" alt="" />
-            </NavLink>
             <NavLink
               to="/who-we-are"
-              onClick={() => setShow(false)}
+              onClick={() => {
+                setShow(false);
+                setShowDropdown(false);
+                setSelectedOption("");
+              }}
               className=" items-center"
             >
               <h2>من نحن</h2>
               <div className="h-0.5 bg-white mt-1 hidden"></div>
             </NavLink>
             <NavLink
+              to="/study-programs"
+              onClick={() => {
+                setShow(false);
+                setShowDropdown(false);
+                setSelectedOption("");
+              }}
+              className="items-center"
+            >
+              <h2>البرامج الدراسية</h2>
+              <div className="h-0.5 bg-white mt-1 hidden"></div>
+            </NavLink>
+            {/* Trigger for the dropdown menu */}
+            <div className="relative">
+              <button
+                onClick={() => setShowDropdown(!showDropdown)}
+                className="flex flex-row-reverse gap-1 items-center focus:outline-none"
+              >
+                <h2>الدورات التدريبية</h2>
+                <img src="src/assets/chevron-down.png" alt="dropdown" />
+              </button>
+
+              {/* Dropdown Menu */}
+              {showDropdown && (
+                <div className="absolute mt-2 bg-[#0B236B] shadow-lg rounded-lg py-4 px-6 right-0 w-64 text-right">
+                  <ul className="space-y-2 mt-2 flex flex-col">
+                    {courses.map((item, index) => {
+                      return (
+                        <NavLink
+                          to="/study-courses"
+                          className={`cursor-pointer ${
+                            selectedOption === item
+                              ? "font-bold text-blue-600"
+                              : "text-[#CCCCDD]"
+                          } hover:text-white`}
+                          onClick={() => {
+                            handleOptionClick(item);
+                            setShowDropdown(false);
+                            setShow(false);
+                          }}
+                          key={index}
+                        >
+                          {item}
+                        </NavLink>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            <NavLink
               to="/support-and-communication"
-              onClick={() => setShow(false)}
+              onClick={() => {
+                setShow(false);
+                setShowDropdown(false);
+                setSelectedOption("");
+              }}
               className=" items-center"
             >
               <h2>الدعم و التواصل</h2>
@@ -114,7 +257,11 @@ const HeroSection = () => {
             </NavLink>
             <NavLink
               to="/blog"
-              onClick={() => setShow(false)}
+              onClick={() => {
+                setShow(false);
+                setShowDropdown(false);
+                setSelectedOption("");
+              }}
               className=" items-center"
             >
               <h2>المدونة</h2>
