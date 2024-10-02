@@ -1,5 +1,5 @@
 import Card from "./Card.jsx";
-import longArrowRight from "../assets/long-arrow-right.png";
+import longArrowRight from "../assets/longArrowRight.png";
 import book from "../assets/book.png";
 import gratuted from "../assets/gratuted.png";
 import setting from "../assets/setting.png";
