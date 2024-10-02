@@ -57,9 +57,9 @@ const StudyCourses = () => {
 
         {/* Text on top of the image */}
         <div className="absolute inset-0 px-28 flex items-center justify-between">
-          <h1 className="text-white text-3xl md:text-4xl font-bold">
+          <h1 className="text-white text-3xl md:text-6xl font-bold">
             برامج الدبلوم{" "}
-            <p className="text-white text-xs md:text-sm font-thin mt-6">
+            <p className="text-white text-xs md:text-lg font-thin mt-6">
               الرئيسية / برامج العلوم / الدورات التدريبية
             </p>
           </h1>
