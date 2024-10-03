@@ -7,11 +7,13 @@ import SupportAndCommunication from '../pages/SupportAndCommunication.jsx'
 import Blog from "../pages/Blog.jsx";
 import Register from "../pages/Register.jsx";
 import Login from "../pages/Login.jsx";
+import Error from '../pages/error/Error.jsx'
 
 const router=createBrowserRouter([
     {
         path:'/',
         element:<MainLayout/>,
+        errorElement:<Error/>,
         children:[
             {
                index:true,
