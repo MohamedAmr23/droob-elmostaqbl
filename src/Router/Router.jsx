@@ -4,10 +4,10 @@ import MainLayout from "../pages/MainLayout.jsx";
 import WhoWeAre from "../pages/WhoWeAre.jsx";
 import StudyPrograms from "../pages/StudyPrograms.jsx";
 import SupportAndCommunication from "../pages/SupportAndCommunication.jsx";
-import SupportAndCommunication from "../pages/SupportAndCommunication.jsx";
 import Blog from "../pages/Blog.jsx";
 import Register from "../pages/Register.jsx";
 import Login from "../pages/Login.jsx";
+import { NavbarProvider } from "../contexts/NavBarContext.jsx";
 
 const router = createBrowserRouter([
   {

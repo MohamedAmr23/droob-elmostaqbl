@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const SupportAndCommunication = () => {
-  return (
-    <div>SupportAndCommunication</div>
-  )
-}
+  return <div></div>;
+};
 
-export default SupportAndCommunication
+export default SupportAndCommunication;
