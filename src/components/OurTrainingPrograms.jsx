@@ -1,4 +1,3 @@
-import Card from "./Card.jsx";
 import longArrowRight from "../assets/long-arrow-right.png";
 import book from "../assets/book.png";
 import gratuted from "../assets/gratuted.png";
@@ -6,6 +5,7 @@ import setting from "../assets/setting.png";
 import mic from "../assets/mic.png";
 import go from "../assets/go.png";
 import manage from "../assets/manage.png";
+import TrainingProgramsCard from "./TrainingProgramsCard.jsx";
 
 const OurTrainingPrograms = () => {
   const details = [
@@ -64,7 +64,7 @@ const OurTrainingPrograms = () => {
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3  my-9 gap-5 ">
         {details.map((item, index) => (
-          <Card
+          <TrainingProgramsCard
             key={index}
             icon={item.icon}
             name={item.name}

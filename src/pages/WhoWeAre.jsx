@@ -12,6 +12,13 @@ import lamp from "../assets/lamp.png";
 import correct from "../assets/correct.png";
 import rocket from "../assets/rocket.png";
 import { NavLink } from "react-router-dom";
+import React from "react";
+import "../index.css";
+import officeImg from "../assets/office.png";
+import button from "../assets/button.png";
+import lamp from "../assets/lamp.png";
+import rocket from "../assets/rocket.png";
+import { NavLink } from "react-router-dom";
 
 const WhoWeAre = () => {
   return (
