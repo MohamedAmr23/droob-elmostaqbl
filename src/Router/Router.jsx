@@ -9,6 +9,7 @@ import Login from "../pages/Login.jsx";
 import StudyPrograms from "../pages/StudyPrograms.jsx";
 import StudyCourses from "../pages/StudyCourses.jsx";
 import { NavbarProvider } from "../contexts/NavBarContext";
+import BlogPost from "../pages/BlogPost.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog />,
+      },
+      {
+        path: "blog/:id",
+        element: <BlogPost />,
       },
       {
         path: "register",

@@ -1,7 +1,7 @@
-import credit1 from "../assets/credit1.png";
-import credit2 from "../assets/credit2.png";
-import credit3 from "../assets/credit3.png";
-import credit4 from "../assets/credit4.png";
+import credit1 from "../assets/credits/credit1.png";
+import credit2 from "../assets/credits/credit2.png";
+import credit3 from "../assets/credits/credit3.png";
+import credit4 from "../assets/credits/credit4.png";
 
 export const Credits = () => {
   const images = [
