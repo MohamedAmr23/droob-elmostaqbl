@@ -41,7 +41,7 @@ const BlogPost = () => {
             <img src={article.authorImg} alt="" />
             <p className="text-[#2C2C2C]">{article.author}</p>
           </div>
-          <p className="text-[#2C2C2C]">{article.date}</p>
+          <p className="text-[#2C2C2C] ">{article.date}</p>
         </div>
 
         {/* article image 1 */}

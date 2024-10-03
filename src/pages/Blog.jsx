@@ -2,6 +2,7 @@ import React from "react";
 import BlogPostCard from "../components/BlogPostCard";
 import { useNavigate } from "react-router-dom";
 import blogPosts from "../assets/blog posts/blogPosts";
+import blogImg from "../assets/blog-img.png";
 
 const Blog = () => {
   const nav = useNavigate();
@@ -9,11 +10,7 @@ const Blog = () => {
     <div className="bg-[#F8FBFB]" dir="rtl">
       <div className=" relative ">
         {/* Image */}
-        <img
-          src="src/assets/blog-img.png"
-          alt="Studying"
-          className="w-full h-auto"
-        />
+        <img src={blogImg} alt="Studying" className="w-full h-auto" />
 
         {/* Text on top of the image */}
         <div className="absolute inset-0 px-28 flex items-center justify-between">

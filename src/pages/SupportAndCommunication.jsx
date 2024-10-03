@@ -1,9 +1,27 @@
-import React from 'react'
+import React from "react";
+import ContactSection from "../components/ContactSection";
+import supportImg from "../assets/support and communication/support-img.png";
 
 const SupportAndCommunication = () => {
   return (
-    <div>SupportAndCommunication</div>
-  )
-}
+    <div className="bg-[#F8FBFB]" dir="rtl">
+      <div className=" relative ">
+        {/* Image */}
+        <img src={supportImg} alt="Studying" className="w-full h-auto" />
 
-export default SupportAndCommunication
+        {/* Text on top of the image */}
+        <div className="absolute inset-0 px-28 flex items-center justify-between">
+          <h1 className="text-white text-3xl md:text-6xl font-bold">
+            الدعم و التواصل
+            <p className="text-white text-xs md:text-lg font-thin mt-6">
+              الرئيسية / تواصل معنا
+            </p>
+          </h1>
+        </div>
+      </div>
+      <ContactSection />
+    </div>
+  );
+};
+
+export default SupportAndCommunication;
