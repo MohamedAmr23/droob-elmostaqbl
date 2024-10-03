@@ -1,3 +1,4 @@
+import TrainingProgramsCard from "./TrainingProgramsCard.jsx";
 import longArrowRight from "../assets/long-arrow-right.png";
 import book from "../assets/book.png";
 import gratuted from "../assets/gratuted.png";
@@ -5,7 +6,6 @@ import setting from "../assets/setting.png";
 import mic from "../assets/mic.png";
 import go from "../assets/go.png";
 import manage from "../assets/manage.png";
-import TrainingProgramsCard from "./TrainingProgramsCard.jsx";
 
 const OurTrainingPrograms = () => {
   const details = [
@@ -52,17 +52,18 @@ const OurTrainingPrograms = () => {
       img: longArrowRight,
     },
   ];
+
   return (
     <div className="py-20 px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] bg-[#F8FBFB]">
-      <div className="text-center m-auto ">
+      <div className="text-center m-auto mb-10">
         <p className="text-[#0055D2] text-xl font-bold">برامجنا التدريبية</p>
-        <h1 className="font-bold mt-5 text-2xl">
-          {" "}
-          اكتشف مستقبلك الدراسي و المهني <br />
+        <h1 className="font-bold mt-5 text-2xl sm:text-3xl">
+          اكتشف مستقبلك الدراسي و المهني
+          <br />
           مع دوراتنا التدريبية المتخصصة
         </h1>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3  my-9 gap-5 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         {details.map((item, index) => (
           <TrainingProgramsCard
             key={index}

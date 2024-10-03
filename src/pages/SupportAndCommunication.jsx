@@ -1,13 +1,13 @@
 import React from "react";
 import ContactSection from "../components/ContactSection";
-import supportImg from "../assets/support and communication/support-img.png";
+import contactHero from "../assets/support and communication/contactHero.png";
 
 const SupportAndCommunication = () => {
   return (
     <div className="bg-[#F8FBFB]" dir="rtl">
       <div className=" relative ">
         {/* Image */}
-        <img src={supportImg} alt="Studying" className="w-full h-auto" />
+        <img src={contactHero} alt="Studying" className="w-full h-auto" />
 
         {/* Text on top of the image */}
         <div className="absolute inset-0 px-28 flex items-center justify-between">

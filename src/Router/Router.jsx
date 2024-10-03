@@ -10,6 +10,8 @@ import StudyPrograms from "../pages/StudyPrograms.jsx";
 import StudyCourses from "../pages/StudyCourses.jsx";
 import { NavbarProvider } from "../contexts/NavBarContext";
 import BlogPost from "../pages/BlogPost.jsx";
+import ContactUs1 from "../components/ContactUs1.jsx";
+import ContactUs2 from "../components/ContactUs2.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       {
         path: "support-and-communication",
         element: <SupportAndCommunication />,
+      },
+      {
+        path: "support-and-communication/contact-us-form",
+        element: <ContactUs1 />,
+      },
+      {
+        path: "support-and-communication/contact-us-phone",
+        element: <ContactUs2 />,
       },
       {
         path: "blog",

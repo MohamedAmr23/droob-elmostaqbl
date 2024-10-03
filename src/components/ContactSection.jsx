@@ -5,15 +5,17 @@ import phoneIcon from "../assets/support and communication/phone-icon.png";
 import emailIcon from "../assets/support and communication/email-icon.png";
 import formIcon from "../assets/support and communication/form-icon.png";
 import whatsappIcon from "../assets/support and communication/whatsapp-icon.png";
+import { useNavigate } from "react-router-dom";
 
 const ContactSection = () => {
+  const nav = useNavigate();
   return (
     <div className="bg-white p-20">
       <div className="flex justify-between items-center gap-10 p-16 bg-[#EDF4FF]">
         <div className="flex flex-col flex-1 border border-white rounded-lg bg-white">
-          {/* Fourth Column */}
+          {/* first Column */}
           <div className="flex flex-col gap-2 p-8 text-right">
-            <h3 className="text-lg font-bold text-[#0055D2] ">
+            <h3 className="text-lg font-bold text-[#0055D2] hover:underline cursor-pointer ">
               المحادثة الفورية
             </h3>
 
@@ -29,9 +31,9 @@ const ContactSection = () => {
             </p>
           </div>
 
-          {/* Fifth Column */}
+          {/* second Column */}
           <div className="flex flex-col gap-2 p-8 text-right">
-            <h3 className="text-lg font-bold border-t pt-8 text-[#0055D2] ">
+            <h3 className="text-lg font-bold border-t pt-8 text-[#0055D2] hover:underline cursor-pointer ">
               فروعنا
             </h3>
 
@@ -47,9 +49,12 @@ const ContactSection = () => {
             </p>
           </div>
 
-          {/* Sixth Column */}
+          {/* third Column */}
           <div className="flex flex-col gap-2 p-8 text-right ">
-            <h3 className="text-lg font-bold border-t pt-8 text-[#0055D2] ">
+            <h3
+              className="text-lg font-bold border-t pt-8 text-[#0055D2] hover:underline cursor-pointer "
+              onClick={() => nav("/support-and-communication/contact-us-phone")}
+            >
               اتصل بنا
             </h3>
             <div className="flex items-center gap-5 ">
@@ -65,14 +70,14 @@ const ContactSection = () => {
 
         <div className="flex flex-col flex-[2] gap-10">
           <div className="flex items-center gap-10 ">
-            {/* Second Column */}
+            {/* fourth Column */}
             <div className="flex-1 flex flex-col items-center text-center border rounded-lg bg-white p-20">
               <div className="text-blue-600 text-4xl mb-4">
                 {/* Icon for email communication */}
-                <img src={emailIcon} alt="" />
+                <img className="cursor-pointer" src={emailIcon} alt="" />
                 {/* Use a suitable icon from FontAwesome */}
               </div>
-              <h3 className="text-lg font-bold text-[#0055D2] mb-3">
+              <h3 className="text-lg font-bold text-[#0055D2] hover:underline cursor-pointer mb-3">
                 البريد الإلكتروني
               </h3>
               <p className="text-gray-600 mb-2 font-extrabold text-lg">
@@ -82,14 +87,26 @@ const ContactSection = () => {
                 من السبت الى الخميس من الساعة ٩ ص حتى ٥ مساءً
               </p>
             </div>
-            {/* First Column */}
+            {/* fifth Column */}
             <div className="flex-1 flex flex-col items-center text-center border rounded-lg bg-white p-20">
               <div className="text-blue-600 text-4xl mb-4">
                 {/* Icon for form communication */}
-                <img src={formIcon} alt="" />
+                <img
+                  className="cursor-pointer"
+                  src={formIcon}
+                  alt=""
+                  onClick={() =>
+                    nav("/support-and-communication/contact-us-form")
+                  }
+                />
                 {/* Use a suitable icon from FontAwesome or similar */}
               </div>
-              <h3 className="text-lg font-bold text-[#0055D2] mb-3">
+              <h3
+                className="text-lg font-bold text-[#0055D2] hover:underline cursor-pointer mb-3"
+                onClick={() =>
+                  nav("/support-and-communication/contact-us-form")
+                }
+              >
                 تواصل معنا
               </h3>
               <p className="text-gray-600 mb-2 font-extrabold text-lg">
@@ -99,14 +116,14 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Third Column */}
+          {/* sixth Column */}
           <div className="flex flex-col items-center text-center border rounded-lg bg-white p-7">
             <div className="text-blue-600 text-4xl mb-4">
               {/* Icon for WhatsApp communication */}
-              <img src={whatsappIcon} alt="" />
+              <img className="cursor-pointer" src={whatsappIcon} alt="" />
               {/* Use a suitable icon from FontAwesome */}
             </div>
-            <h3 className="text-lg font-bold text-[#0055D2] mb-3">
+            <h3 className="text-lg font-bold text-[#0055D2] hover:underline cursor-pointer mb-3">
               تواصل عبر الواتساب
             </h3>
             <p className="text-gray-600 mb-2 font-extrabold text-lg">
