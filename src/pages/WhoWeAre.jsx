@@ -6,7 +6,7 @@ import longArrowRight from "../assets/long-arrow-right.png";
 import p1 from "../assets/p1.png";
 import p2 from "../assets/p2.png";
 import p3 from "../assets/p3.png";
-import wrapper from "../assets/wrapper.png";
+// import wrapper from "../assets/wrapper.png";
 import office2 from "../assets/office2.png";
 import lamp from "../assets/lamp.png";
 import correct from "../assets/correct-circle.png";
