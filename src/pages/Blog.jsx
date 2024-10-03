@@ -66,7 +66,7 @@ const Blog = () => {
             اللب، وهذه البكتيريا إلى جانب التسوس الموجود بالأصل من شأنهما أن
             يُؤديا إلى الإصابة بالالتهاب أو خراج السن كما ذكرنا سابقًا، وهذا ما
             يجعل استئصال لب السن ضروريًا
-            <span className="text-[#0055D2] underline"> عرض المزيد</span>
+            <span className="text-[#0055D2] underline cursor-pointer"> عرض المزيد</span>
           </p>
         </div>
         <div className="flex flex-col md:flex-row lg:flex-col flex-1 gap-10">
@@ -82,7 +82,7 @@ const Blog = () => {
                   <p className="text-[#616161] text-wrap">
                     في بعض الحالات وفي حال عدم تلقي العلاج بالوقت المناسب، يؤدي
                     تضرر لب السن إلى تحلله{" "}
-                    <span className="text-[#0055D2] underline">
+                    <span className="text-[#0055D2] underline cursor-pointer">
                       {" "}
                       عرض المزيد
                     </span>
@@ -105,7 +105,7 @@ const Blog = () => {
       </div>
 
       <h1 className="text-[#2C2C2C] text-3xl mt-20 mb-10 mx-28">
-        المقالات الرئيسية
+        المقالات الأكثر قراءة
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-28 gap-8 mb-20">
