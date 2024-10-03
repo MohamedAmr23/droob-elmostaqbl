@@ -1,5 +1,4 @@
 import PropTypes from "prop-types"; 
-// import test from '../assets/diploma-patent-svgrepo-com'
 const Card = ({ icon, name, desc, button, img }) => {
   return (
     <div className="flex flex-col justify-center items-end bg-[#ffffff] py-4 px-5 pl-16">
