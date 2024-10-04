@@ -9,6 +9,7 @@ import FAQs from "../components/FAQs.jsx";
 import Pricing from "../components/Pricing.jsx";
 import Testimonials from "../components/Testimonials.jsx";
 import Footer from "../components/Footer.jsx";
+import Courses from "../components/Courses.jsx";
 
 const HomePage = () => {
   return(
@@ -16,6 +17,7 @@ const HomePage = () => {
       <HeroSection />
       <OurTrainingPrograms/>
       <About/>
+      <Courses/>
       <Features/>
       <CTA/>
       <Credits/>
