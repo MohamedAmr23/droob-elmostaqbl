@@ -8,6 +8,7 @@ import { Credits } from "../components/Credits.jsx";
 import FAQs from "../components/FAQs.jsx";
 import Pricing from "../components/Pricing.jsx";
 import Testimonials from "../components/Testimonials.jsx";
+import Footer from "../components/Footer.jsx";
 
 const HomePage = () => {
   return(
@@ -21,6 +22,7 @@ const HomePage = () => {
       <FAQs/>
       <Pricing/>
       <Testimonials/>
+      <Footer/>
     </Fragment>
   );
 };
