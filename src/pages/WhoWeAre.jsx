@@ -9,23 +9,32 @@ import p3 from "../assets/p3.png";
 import wrapper from "../assets/wrapper.png";
 import office2 from "../assets/office2.png";
 import lamp from "../assets/lamp.png";
-import correct from "../assets/correct.png";
+import correct from "../assets/correct-circle.png";
 import rocket from "../assets/rocket.png";
-import { NavLink } from "react-router-dom";
+import aboutImage from "../assets/about-img.png";
+import whoWeAreMask from "../assets/who-we-are-mask.png";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const WhoWeAre = () => {
+  const nav = useNavigate();
   return (
     <div dir="rtl">
       {/* About Hero */}
-      <div className="bg-[url('assets/about-img.png')] w-[100%] h-[500px] bg-no-repeat">
-        <div className="text-white h-full flex flex-col gap-6 justify-center pr-48">
-          <h1 className="font-bold text-5xl">من نحن</h1>
-          <p className="font-normal">
-            <NavLink to="/">
-              <span className="text-gray-400 cursor-pointer">الرئيسية</span>
-            </NavLink>{" "}
-            / من نحن
-          </p>
+      <div className=" relative ">
+        {/* Image */}
+        <img src={aboutImage} alt="about" className="w-full h-auto" />
+
+        {/* Text on top of the image */}
+        <div className="absolute inset-0 px-28 flex items-center justify-between">
+          <h1 className="text-white text-3xl md:text-6xl font-bold">
+            من نحن{" "}
+            <p className="text-white text-xs md:text-lg font-thin mt-6">
+              <NavLink to="/">
+                <span className="text-gray-400 cursor-pointer"> الرئيسية</span>
+              </NavLink>{" "}
+              / من نحن
+            </p>
+          </h1>
         </div>
       </div>
 
@@ -48,7 +57,10 @@ const WhoWeAre = () => {
           </p>
           <div>
             <NavLink to="">
-              <button className="flex flex-row-reverse gap-3 border rounded-lg items-center font-semibold py-3 px-10 bg-blue-800 text-white">
+              <button
+                onClick={() => nav("/login")}
+                className="flex flex-row-reverse gap-3 border rounded-lg items-center font-semibold py-3 px-10 bg-blue-800 text-white"
+              >
                 <img src={longArrowRightW} /> إبدأ الآن
               </button>
             </NavLink>
@@ -118,9 +130,9 @@ const WhoWeAre = () => {
       {/* Fifth Part */}
       <div className="flex flex-col-reverse md:flex-row items-center py-20 px-10 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] gap-20">
         {/* Images */}
-        <div className="flex gap-3">
-          <img className="w-60 h-80" src={wrapper} />
-          <img className="w-60 h-80" src={office2} />
+        <div className="flex items-center justify-center gap-3">
+          <img className="w-40 h-70 md:w-60 md:h-80" src={wrapper} />
+          <img className="w-40 h-70 md:w-60 md:h-80" src={office2} />
         </div>
 
         {/* Info */}
@@ -139,7 +151,7 @@ const WhoWeAre = () => {
             عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه
             الأحرف.{" "}
           </p>
-          <div className="flex gap-40">
+          <div className="flex gap-20 md:gap-40">
             <div className="flex flex-col gap-6">
               <div className="flex gap-4 items-center">
                 <img src={correct} className="w-4 h-4" />
@@ -165,20 +177,27 @@ const WhoWeAre = () => {
       </div>
 
       {/* Sixth Part */}
-      <div className="flex justify-center items-center py-20 bg-gray-50">
-        <div className="bg-[url('assets/mask.png')] h-[330px] flex items-center justify-center">
-          <div className="flex flex-col gap-6 text-center w-3/4 items-center">
-            <h1 className="font-bold text-3xl text-white">
-              سجل الآن و إنضم لمجتمع دروب المستقبل و استفد من برامجنا التدريبية
-              والاستشارية المصممة خصيصًا لك
+      <div className="flex justify-center items-center pt-32 pb-48 px-5 bg-gray-50">
+        <div className="relative">
+          <img src={whoWeAreMask} alt="about" className="w-full h-auto" />
+          <div className="absolute inset-0 w-auto h-auto flex flex-col gap-6 items-center text-center justify-center px-3">
+            <h1 className="font-bold text-xl md:text-3xl text-white">
+              سجل الآن و إنضم لمجتمع دروب المستقبل و استفد من
+              <br /> برامجنا التدريبية والاستشارية المصممة خصيصًا لك
             </h1>
-            <div className="flex gap-6 justify-center">
+            <div className="flex gap-6 justify-center items-center">
               <NavLink to="">
-                <button className="flex flex-row-reverse gap-3 border rounded-lg items-center font-semibold py-3 px-10 bg-white text-blue-800">
+                <button
+                  onClick={() => nav("/login")}
+                  className="flex flex-row-reverse gap-3 border rounded-lg items-center font-semibold py-2 px-8 bg-white text-blue-800"
+                >
                   <img src={longArrowRight} /> إبدأ الآن
                 </button>
               </NavLink>
-              <button className=" text-white font-semibold rounded">
+              <button
+                onClick={() => nav("/support-and-communication")}
+                className=" text-white font-semibold rounded"
+              >
                 احجز استشارة
               </button>
             </div>
