@@ -16,9 +16,9 @@ const Card = ({ icon, name, desc, button, img, price, date }) => {
         <p className="text-sm text-gray-600 mb-4">{desc}</p>
 
         {/* Rating */}
-        <div className="flex justify-end items-center mb-4">
-          <p className="text-[#616161] mr-1">42/862 تقييم</p>
+        <div className="flex justify-start items-center mb-4">
           <img src={img} alt="Rating" />
+          <p className="text-[#616161] mr-1">42/862 تقييم</p>
         </div>
 
         {/* Course Information */}

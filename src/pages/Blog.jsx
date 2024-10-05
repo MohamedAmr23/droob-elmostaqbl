@@ -1,43 +1,16 @@
 import React from "react";
-import blogPost1 from "../assets/blog-post-1.png";
-import blogPost2 from "../assets/blog-post-2.png";
-import blogPost3 from "../assets/blog-post-3.png";
-import blogPost4 from "../assets/blog-post-4.png";
-import blogPost5 from "../assets/blog-post-5.png";
-import blogPost6 from "../assets/blog-post-6.png";
-import blogPost7 from "../assets/blog-post-7.png";
-import blogPost8 from "../assets/blog-post-8.png";
-import blogPost9 from "../assets/blog-post-9.png";
-import blogPost10 from "../assets/blog-post-10.png";
-import blogPost11 from "../assets/blog-post-11.png";
-import blogPost12 from "../assets/blog-post-12.png";
-import blogPost13 from "../assets/blog-post-13.png";
 import BlogPostCard from "../components/BlogPostCard";
+import { useNavigate } from "react-router-dom";
+import blogPosts from "../assets/blog posts/blogPosts";
+import blogImg from "../assets/blog-img.png";
 
 const Blog = () => {
-  const blogPostsImages = [
-    blogPost2,
-    blogPost3,
-    blogPost4,
-    blogPost5,
-    blogPost6,
-    blogPost7,
-    blogPost8,
-    blogPost9,
-    blogPost10,
-    blogPost11,
-    blogPost12,
-    blogPost13,
-  ];
+  const nav = useNavigate();
   return (
     <div className="bg-[#F8FBFB]" dir="rtl">
       <div className=" relative ">
         {/* Image */}
-        <img
-          src="src/assets/blog-img.png"
-          alt="Studying"
-          className="w-full h-auto"
-        />
+        <img src={blogImg} alt="Studying" className="w-full h-auto" />
 
         {/* Text on top of the image */}
         <div className="absolute inset-0 px-28 flex items-center justify-between">
@@ -55,7 +28,11 @@ const Blog = () => {
       </h1>
       <div className="flex flex-col xl:flex-row justify-between mx-28 mb-20 gap-10">
         <div className="flex flex-col flex-1 gap-3">
-          <img src={blogPost1} alt="" />
+          <img
+            src={blogPosts[0].img}
+            alt=""
+            onClick={() => nav(`/blog/${blogPosts[0].id}`)}
+          />
           <p className="text-[#0055D2]">البرامج التأهيلية • 1 يناير2024</p>
           <h1 className="text-[#1A1A1A]">
             أحدث الدورات والتخصصات والشهادات المهنية في تصميم تجربة
@@ -66,14 +43,24 @@ const Blog = () => {
             اللب، وهذه البكتيريا إلى جانب التسوس الموجود بالأصل من شأنهما أن
             يُؤديا إلى الإصابة بالالتهاب أو خراج السن كما ذكرنا سابقًا، وهذا ما
             يجعل استئصال لب السن ضروريًا
-            <span className="text-[#0055D2] underline"> عرض المزيد</span>
+            <span
+              className="text-[#0055D2] underline cursor-pointer"
+              onClick={() => nav(`/blog/${blogPosts[0].id}`)}
+            >
+              {" "}
+              عرض المزيد
+            </span>
           </p>
         </div>
         <div className="flex flex-col md:flex-row lg:flex-col flex-1 gap-10">
-          {blogPostsImages.slice(0, 3).map((item, index) => {
+          {blogPosts.slice(1, 4).map((item) => {
             return (
-              <div className="flex flex-col lg:flex-row gap-5" key={index}>
-                <img src={item} alt="" />
+              <div className="flex flex-col lg:flex-row gap-5" key={item.id}>
+                <img
+                  src={item.img}
+                  alt=""
+                  onClick={() => nav(`/blog/${item.id}`)}
+                />
                 <div className="flex flex-col gap-2">
                   <p className="text-[#0055D2]">تطوير الذات • 1 يناير2024</p>
                   <h1 className="text-[#1A1A1A]">
@@ -82,7 +69,10 @@ const Blog = () => {
                   <p className="text-[#616161] text-wrap">
                     في بعض الحالات وفي حال عدم تلقي العلاج بالوقت المناسب، يؤدي
                     تضرر لب السن إلى تحلله{" "}
-                    <span className="text-[#0055D2] underline">
+                    <span
+                      className="text-[#0055D2] underline cursor-pointer"
+                      onClick={() => nav(`/blog/${item.id}`)}
+                    >
                       {" "}
                       عرض المزيد
                     </span>
@@ -99,18 +89,18 @@ const Blog = () => {
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-28 gap-8 mb-20">
-        {blogPostsImages.slice(3, 9).map((item, index) => {
-          return <BlogPostCard key={index} img={item} />;
+        {blogPosts.slice(4, 10).map((item) => {
+          return <BlogPostCard obj={item} key={item.id} img={item.img} />;
         })}
       </div>
 
       <h1 className="text-[#2C2C2C] text-3xl mt-20 mb-10 mx-28">
-        المقالات الرئيسية
+        المقالات الأكثر قراءة
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-28 gap-8 mb-20">
-        {blogPostsImages.slice(9).map((item, index) => {
-          return <BlogPostCard key={index} img={item} />;
+        {blogPosts.slice(10).map((item) => {
+          return <BlogPostCard obj={item} key={item.id} img={item.img} />;
         })}
       </div>
     </div>

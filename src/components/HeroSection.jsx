@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import React, { useContext } from "react";
 import { NavbarContext } from "../contexts/NavBarContext";
+import logoWhite from "../assets/logo-white.png";
+import menu from "../assets/menu.png";
 
 const HeroSection = () => {
   // state to control responsiive navbar
@@ -21,7 +23,7 @@ const HeroSection = () => {
       <nav className=" relative z-50 flex flex-row-reverse justify-between items-center text-[#CCCCDD] bg-[#0B236B]  px-6 py-4 md:px-16">
         <img
           onClick={() => nav(`/`)}
-          src="src\assets\logo-white.png"
+          src={logoWhite}
           alt=""
           className="w-80 cursor-pointer"
         />
@@ -126,7 +128,7 @@ const HeroSection = () => {
 
         <div className="flex items-center">
           <img
-            src="src\assets\menu.png"
+            src={menu}
             alt=""
             className="lg:hidden w-10 cursor-pointer"
             onClick={() => setShow(true)}
@@ -164,7 +166,7 @@ const HeroSection = () => {
 
         <div
           className={`fixed inset-0 z-50 py-8 transition-all bg-[#0B236B] ${
-            show ? "w-full opacity-100" : "w-0 opacity-0"
+            show ? "w-full opacity-100" : "hidden opacity-0"
           }`}
         >
           <ul className="flex flex-col items-center gap-10">

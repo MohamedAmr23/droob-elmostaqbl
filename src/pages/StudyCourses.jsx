@@ -1,10 +1,10 @@
 import React from "react";
 import Card from "../components/Card";
-import business_course from "../assets/business_course.png";
-import Rating from "../assets/Rating.png";
-import accounting from "../assets/accounting_course.png";
-import mobile from "../assets/mobile-course.png";
-import english from "../assets/english_course.png";
+import business_course from "../assets/study courses/business_course.png";
+import Rating from "../assets/study courses/Rating.png";
+import accounting from "../assets/study courses/accounting_course.png";
+import mobile from "../assets/study courses/mobile-course.png";
+import english from "../assets/study courses/english_course.png";
 
 const StudyCourses = () => {
   const details = [

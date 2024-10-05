@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import React, { useContext } from "react";
 import { NavbarContext } from "../contexts/NavBarContext";
+import chevronDown from "../assets/chevron-down.png";
+import logoBlack from "../assets/logo-black.png";
+import menu from "../assets/menu.png";
 
 const NavBar = () => {
   const {
@@ -20,7 +23,7 @@ const NavBar = () => {
     <nav className="relative z-50 flex flex-row-reverse justify-between items-center text-[#0B236B] bg-white px-6 py-4 md:px-16">
       <img
         onClick={() => nav(`/`)}
-        src="src/assets/logo-black.png"
+        src={logoBlack}
         alt=""
         className="w-80 cursor-pointer"
       />
@@ -73,7 +76,7 @@ const NavBar = () => {
             className="flex flex-row-reverse gap-1 items-center focus:outline-none"
           >
             <h2>الدورات التدريبية</h2>
-            <img src="src/assets/chevron-down.png" alt="dropdown" />
+            <img src={chevronDown} alt="dropdown" />
           </button>
 
           {/* Dropdown Menu */}
@@ -130,7 +133,7 @@ const NavBar = () => {
 
       <div className="flex items-center">
         <img
-          src="src/assets/menu.png"
+          src={menu}
           alt=""
           className="lg:hidden w-10 cursor-pointer"
           onClick={() => setShow(true)}
@@ -153,7 +156,7 @@ const NavBar = () => {
       {/* Navigation links for below medium screens */}
       <div
         className={`fixed inset-0 z-50 py-8 transition-all bg-white ${
-          show ? "w-full opacity-100" : "w-0 opacity-0"
+          show ? "w-full opacity-100" : "hidden opacity-0"
         }`}
       >
         <ul className="flex flex-col items-center gap-10">
@@ -199,7 +202,7 @@ const NavBar = () => {
               className="flex flex-row-reverse gap-1 items-center focus:outline-none"
             >
               <h2>الدورات التدريبية</h2>
-              <img src="src/assets/chevron-down.png" alt="dropdown" />
+              <img src={chevronDown} alt="dropdown" />
             </button>
 
             {/* Dropdown Menu */}
